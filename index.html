@@ -262,6 +262,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .service-pink .service-icon,.service-pink .service-cta{background:#db2777}
 .service-pink .service-cta:hover{background:#be185d}
 @media(hover:hover) and (pointer:fine){.service-category{cursor:default}.service-cta,a,button{cursor:pointer}}
+
+/* Touch / tap animation (press feedback + ripple) */
+.btn,.service-cta,.lang,.social-btn,.service-category,.card,.contact-item{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn,.service-cta,.lang{overflow:hidden}
+.btn:active,.service-cta:active,.lang:active{transform:scale(.95)!important;filter:brightness(1.1)}
+.social-btn:active{transform:scale(.96)!important;border-color:var(--social-color);box-shadow:0 0 0 3px var(--social-tint),0 0 22px var(--social-tint)}
+.social-btn:active .social-icon{transform:scale(1.14) rotate(-6deg)}
+.service-category:active,.card:active{transform:scale(.985)}
+.service-category:active .service-icon{transform:scale(1.1) rotate(-5deg)}
+.contact-item{transition:transform .2s ease,border-color .2s ease}
+.contact-item:active{transform:scale(.98);border-color:rgba(0,220,131,.45)}
+.tap-ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.38);transform:scale(0);opacity:1;animation:tapRipple .65s ease-out forwards;z-index:0}
+.service-category .tap-ripple{background:rgba(0,220,131,.22)}
+@keyframes tapRipple{to{transform:scale(1);opacity:0}}
+.tap-spark{position:fixed;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;pointer-events:none;z-index:9999;background:linear-gradient(135deg,#6d7cff,#23c7ff);box-shadow:0 0 10px rgba(35,199,255,.7);animation:tapSpark .6s ease-out forwards}
+@keyframes tapSpark{to{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -279,7 +296,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section class="hero container" id="home">
 <div class="fade">
 <div class="eyebrow">Freelancer • Digital Marketer</div>
-<h1><span class="en">Grow your brand.<br><span class="gradient">Grow your business.</span></span><span class="bn">আপনার ব্র্যান্ডকে এগিয়ে নিন।<br><span class="gradient">ব্যবসাকে আরও বড় করুন।</span></span></h1>
+<h1><span class="en">Grow your brand.<br><span class="gradient">Grow your business.</span></span><span class="bn">আপনার ব্র্যান্ডকে এগিয়ে নিন।<br><span class="gradient">ব্যবসাকে আরও বড় করুন।</span></span></h1>
 <p class="en">I’m Rakib Hasan Jim, a Digital Marketer helping brands and businesses build a stronger digital presence through strategy, social media, promotion and web solutions.</p>
 <p class="bn block">আমি Rakib Hasan Jim—Digital Marketer। Digital marketing, social media, promotion এবং web solutions-এর মাধ্যমে ব্র্যান্ড ও ব্যবসার digital presence শক্তিশালী করতে কাজ করি।</p>
 <div class="actions"><a class="btn primary" href="#contact"><span class="en">Get a Free Consultation</span><span class="bn">ফ্রি কনসালটেশন নিন</span></a><a class="btn" href="#services"><span class="en">Explore Services</span><span class="bn">সার্ভিস দেখুন</span></a></div>
@@ -426,7 +443,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 </a>
 
 <!-- Instagram -->
-<a class="social-btn" href="https://www.instagram.com/elitecarsociety.us?stkn=MWhlemhhanM5NzAzZg==" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram">
+<a class="social-btn" href="https://www.instagram.com/rh_xim07" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram">
 <span class="social-icon instagram-icon" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -455,7 +472,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <div class="contact-item"><small>Email</small><a href="mailto:rakib.hasan.jim@gmail.com">rakib.hasan.jim@gmail.com</a></div>
 <div class="contact-item"><small>WhatsApp / Contact</small><a href="tel:+8801577561654">01577561654</a></div>
 <div class="contact-item"><small>Facebook</small><a href="https://www.facebook.com/share/18WYebev3H/" target="_blank" rel="noopener noreferrer">Facebook Profile</a></div>
-<div class="contact-item"><small>Instagram</small><a href="https://www.instagram.com/elitecarsociety.us?stkn=MWhlemhhanM5NzAzZg==" target="_blank" rel="noopener noreferrer">Instagram Profile</a></div>
+<div class="contact-item"><small>Instagram</small><a href="https://www.instagram.com/rh_xim07" target="_blank" rel="noopener noreferrer">Instagram Profile</a></div>
 <div class="contact-item"><small>Office</small><span>KA-32/5-A, Palash Tower, Level 6, Opposite Suvastu Nazar Valley, Shahjadpur, Gulshan, Dhaka-1212, Bangladesh</span></div>
 <div class="contact-item"><small>Location</small><a href="https://www.google.com/maps/search/?api=1&amp;query=KA-32%2F5-A%2C%20Palash%20Tower%2C%20Shahjadpur%2C%20Gulshan%2C%20Dhaka%201212" target="_blank" rel="noopener noreferrer">View on Google Maps</a></div>
 </div>
@@ -484,6 +501,41 @@ document.querySelectorAll('.service-category').forEach(function(card){
     card.style.setProperty('--pointer-y',((event.clientY-rect.top)/rect.height*100)+'%');
   },{passive:true});
 });
+</script>
+
+<script>
+/* Touch / tap animation: ripple on buttons & cards + small spark burst */
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var targets='.btn,.service-cta,.lang,.social-btn,.service-category,.card,.contact-item';
+  document.addEventListener('pointerdown',function(e){
+    var el=e.target.closest(targets);
+    if(!el)return;
+    var rect=el.getBoundingClientRect();
+    var size=Math.max(rect.width,rect.height)*2;
+    var r=document.createElement('span');
+    r.className='tap-ripple';
+    r.style.width=r.style.height=size+'px';
+    r.style.left=(e.clientX-rect.left-size/2)+'px';
+    r.style.top=(e.clientY-rect.top-size/2)+'px';
+    var cs=window.getComputedStyle(el);
+    if(cs.position==='static')el.style.position='relative';
+    el.appendChild(r);
+    setTimeout(function(){r.remove();},700);
+    for(var i=0;i<6;i++){
+      var s=document.createElement('span');
+      s.className='tap-spark';
+      var a=(Math.PI*2/6)*i+Math.random()*.6;
+      var d=22+Math.random()*18;
+      s.style.left=e.clientX+'px';
+      s.style.top=e.clientY+'px';
+      s.style.setProperty('--dx',Math.cos(a)*d+'px');
+      s.style.setProperty('--dy',Math.sin(a)*d+'px');
+      document.body.appendChild(s);
+      setTimeout((function(n){return function(){n.remove();};})(s),650);
+    }
+  },{passive:true});
+})();
 </script>
 
 </body>
