@@ -280,6 +280,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @keyframes tapSpark{to{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+h1,.section-head h2,.services-banner h2{
+background:linear-gradient(100deg,#ffffff 8%,#c4b5fd 38%,#a855f7 68%,#4dd9ff 100%);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+h1 .gradient{background:none!important}
+.services-banner h2 span{color:#00dc83;-webkit-text-fill-color:#00dc83}
 </style>
 </head>
 
