@@ -281,12 +281,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 h1,.section-head h2,.services-banner h2{
-background:linear-gradient(100deg,#ffffff 8%,#c4b5fd 38%,#a855f7 68%,#4dd9ff 100%);
+background:linear-gradient(100deg,#c4b5fd 0%,#a855f7 60%,#4dd9ff 100%);
 -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 h1 .gradient{background:none!important}
 .services-banner h2 span{color:#00dc83;-webkit-text-fill-color:#00dc83}
 .tap-ripple{display:none!important}
+  /* Service card hover: card fills with its own colour */
+.service-category{--c:#00a95c;transition:background-color .35s ease,border-color .35s ease,color .35s ease,transform .35s ease,box-shadow .35s ease}
+.service-blue{--c:#087af5}
+.service-red{--c:#f32632}
+.service-purple{--c:#5629e8}
+.service-orange{--c:#ff7900}
+.service-pink{--c:#db2777}
+.service-category:hover,.service-category:active{background:var(--c);border-color:var(--c);box-shadow:0 16px 32px rgba(0,0,0,.18)}
+.service-category:hover h3,.service-category:hover>.muted,.service-category:hover .service-list li,.service-category:hover .service-number,
+.service-category:active h3,.service-category:active>.muted,.service-category:active .service-list li,.service-category:active .service-number{color:#fff}
+.service-category:hover .service-icon,.service-category:active .service-icon{background:#fff;color:var(--c)}
+.service-category:hover .service-list li:before,.service-category:active .service-list li:before{background:rgba(255,255,255,.25);color:#fff}
+.service-category:hover .service-cta,.service-category:active .service-cta{background:#fff;color:var(--c)}
 </style>
 </head>
 
