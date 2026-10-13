@@ -304,6 +304,17 @@ h1 .gradient{background:none!important}
 h1{font-size:clamp(26px,4.6vw,56px);letter-spacing:-2px;white-space:nowrap}
 @media(max-width:850px){h1{font-size:clamp(26px,8.2vw,56px)}}
 .logo-img{height:48px;width:auto;display:block;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+/* কার্ডের আলোর আভা বন্ধ */
+.project:before{background:linear-gradient(145deg,#111827,#0a0e18)!important}
+.service-category::before{display:none!important}
+
+/* কার্সর গেলে পার্পল হাইলাইট */
+.project{transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.project:hover{border-color:#a855f7!important;box-shadow:0 0 0 1px #a855f7,0 14px 34px rgba(168,85,247,.28)!important}
+.project:hover:before{background:linear-gradient(145deg,#a855f7,#7c3aed)!important}
+.project:hover h3{color:#fff}
+.project:hover .muted{color:#f3e8ff}
+.project:hover .tag{border-color:rgba(255,255,255,.55);color:#fff}
 </style>
 </head>
 
