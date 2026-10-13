@@ -318,7 +318,12 @@ h1{font-size:clamp(26px,4.6vw,56px);letter-spacing:-2px;white-space:nowrap}
 .social-icon{background:transparent!important}
 .social-icon svg{width:40px!important;height:40px!important}
 .social-btn[href^="mailto:"]{--social-color:#EA4335;--social-tint:rgba(234,67,53,.22)}
-@media(max-width:560px){.social-icon svg{width:30px!important;height:30px!important}}
+@media(max-width:560px){.social-icon svg{width:30px!important;height:30px!important}} /* সোশ্যাল বাটন: কার্সর নিলে নিজের রঙে জ্বলে ওঠা */
+.social-links .social-btn{transition:all .25s ease}
+.social-links a[href*="wa.me"]:hover,.social-links a[href*="wa.me"]:active{border-color:#25D366!important;background:rgba(37,211,102,.20)!important;box-shadow:0 0 0 1px #25D366,0 0 28px rgba(37,211,102,.55)!important;transform:translateY(-4px)}
+.social-links a[href*="facebook.com"]:hover,.social-links a[href*="facebook.com"]:active{border-color:#1877F2!important;background:rgba(24,119,242,.22)!important;box-shadow:0 0 0 1px #1877F2,0 0 28px rgba(24,119,242,.55)!important;transform:translateY(-4px)}
+.social-links a[href*="instagram.com"]:hover,.social-links a[href*="instagram.com"]:active{border-color:#E4405F!important;background:rgba(228,64,95,.22)!important;box-shadow:0 0 0 1px #E4405F,0 0 28px rgba(228,64,95,.55)!important;transform:translateY(-4px)}
+.social-links a[href^="mailto:"]:hover,.social-links a[href^="mailto:"]:active{border-color:#EA4335!important;background:rgba(234,67,53,.22)!important;box-shadow:0 0 0 1px #EA4335,0 0 28px rgba(234,67,53,.55)!important;transform:translateY(-4px)}
 </style>
 </head>
 
