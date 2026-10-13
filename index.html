@@ -309,11 +309,10 @@ h1{font-size:clamp(26px,4.6vw,56px);letter-spacing:-2px;white-space:nowrap}
 .service-category::before{display:none!important}
 
 /* কার্সর গেলে পার্পল হাইলাইট */
-.project{transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease}
-.project:hover{border-color:#a855f7!important;box-shadow:0 0 0 1px #a855f7,0 14px 34px rgba(168,85,247,.28)!important}
-.project:hover:before{background:linear-gradient(145deg,#a855f7,#7c3aed)!important}
-.project:hover h3{color:#fff}
-.project:hover .muted{color:#f3e8ff}
+.project{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.project:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(145deg,rgba(168,85,247,.24),rgba(124,58,237,.12));opacity:0;transition:opacity .3s ease}
+.project:hover{transform:translateY(-6px) scale(1.04)!important;border-color:#a855f7!important;box-shadow:0 0 0 1px #a855f7,0 16px 34px rgba(168,85,247,.28)!important}
+.project:hover:after{opacity:1}
 .project:hover .tag{border-color:rgba(255,255,255,.55);color:#fff}
 .social-icon{background:transparent!important}
 .social-icon svg{width:40px!important;height:40px!important}
