@@ -323,6 +323,13 @@ h1{font-size:clamp(26px,4.6vw,56px);letter-spacing:-2px;white-space:nowrap}
 .social-links a[href*="facebook.com"]:hover,.social-links a[href*="facebook.com"]:active{border-color:#1877F2!important;background:rgba(24,119,242,.22)!important;box-shadow:0 0 0 1px #1877F2,0 0 28px rgba(24,119,242,.55)!important;transform:translateY(-4px)}
 .social-links a[href*="instagram.com"]:hover,.social-links a[href*="instagram.com"]:active{border-color:#E4405F!important;background:rgba(228,64,95,.22)!important;box-shadow:0 0 0 1px #E4405F,0 0 28px rgba(228,64,95,.55)!important;transform:translateY(-4px)}
 .social-links a[href^="mailto:"]:hover,.social-links a[href^="mailto:"]:active{border-color:#EA4335!important;background:rgba(234,67,53,.22)!important;box-shadow:0 0 0 1px #EA4335,0 0 28px rgba(234,67,53,.55)!important;transform:translateY(-4px)}
+/* মোবাইলে তথ্যের টেবিল ফিট করা */
+@media(max-width:600px){
+table[style*="border-collapse:separate"]{font-size:14px!important;border-spacing:6px 4px!important;width:100%;max-width:100%;table-layout:auto}
+table[style*="border-collapse:separate"] td{overflow-wrap:anywhere;word-break:break-word;vertical-align:top}
+div[style*="min-width:240px"]{min-width:0!important;width:100%}
+html,body{overflow-x:hidden}
+}
 </style>
 </head>
 
