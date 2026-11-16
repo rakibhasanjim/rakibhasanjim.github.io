@@ -333,6 +333,14 @@ html,body{overflow-x:hidden}
 .service-photo{grid-column:span 2;display:flex;align-items:center;justify-content:center;min-height:260px;background:transparent}
 .service-photo img{max-width:100%;max-height:420px;width:auto;height:auto;object-fit:contain;display:block}
 @media(max-width:600px){.service-photo{grid-column:auto;min-height:200px}}
+/* Highlighted Google Maps card */
+.contact-item:has(a[href*="google.com/maps"]){position:relative;background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;box-shadow:0 12px 35px rgba(74,120,255,.35);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+.contact-item:has(a[href*="google.com/maps"]) small{color:rgba(255,255,255,.9);font-weight:600}
+.contact-item a[href*="google.com/maps"]{position:static;display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:10px 18px;background:#fff;color:#0b1020;border-radius:12px;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.18);transition:transform .2s ease}
+.contact-item a[href*="google.com/maps"]::before{content:"📍"}
+.contact-item a[href*="google.com/maps"]::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.contact-item:has(a[href*="google.com/maps"]):hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 16px 40px rgba(74,120,255,.5)}
+.contact-item:has(a[href*="google.com/maps"]):active{transform:scale(.98)}
 </style>
 </head>
 
