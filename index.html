@@ -340,7 +340,9 @@ html,body{overflow-x:hidden}
 .contact-item a[href*="google.com/maps"]::before{content:"📍"}
 .contact-item a[href*="google.com/maps"]::after{content:"";position:absolute;inset:0;border-radius:inherit}
 .contact-item:has(a[href*="google.com/maps"]):hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 16px 40px rgba(74,120,255,.5)}
-.contact-item:has(a[href*="google.com/maps"]):active{transform:scale(.98)}
+.contact-item:has(a[href*="google.com/maps"]):active{transform:scale(.98)}/* Services banner heading colours */
+.services-banner h2 span.svc-blue{color:#2f8cff;-webkit-text-fill-color:#2f8cff}
+.services-banner h2 span.svc-red{color:#ff3b47;-webkit-text-fill-color:#ff3b47}
 </style>
 </head>
 
@@ -430,7 +432,7 @@ html,body{overflow-x:hidden}
 <div class="services-banner">
 <div class="container services-banner-inner">
 <div class="eyebrow">MY SERVICES</div>
-<h2>Digital Marketing <span>Services</span></h2>
+<h2><span class="svc-blue">Digital</span> <span class="svc-red">Marketing</span> <span>Services</span></h2>
 <p>Complete digital solutions to grow your online presence, brand value and business.।</p>
 </div>
 </div>
